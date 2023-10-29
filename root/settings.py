@@ -29,6 +29,8 @@ SECRET_KEY = environ.get(
 
 
 HOSTNAME = environ.get("HOSTNAME")
+APP_URL = environ.get("APP_URL")
+
 DATABASE_HOST = environ.get("DATABASE_HOST")
 DATABASE_PORT = environ.get("DATABASE_PORT")
 DATABASE_NAME = environ.get("DATABASE_NAME")
@@ -45,7 +47,7 @@ AWS_LOCATION = environ.get("AWS_LOCATION")
 DEBUG = True
 
 ALLOWED_HOSTS = [HOSTNAME]
-CSRF_TRUSTED_ORIGINS = [HOSTNAME]
+CSRF_TRUSTED_ORIGINS = [APP_URL]
 
 
 
