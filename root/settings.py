@@ -27,6 +27,8 @@ SECRET_KEY = environ.get(
 )
 
 
+
+HOSTNAME = environ.get("HOSTNAME")
 DATABASE_HOST = environ.get("DATABASE_HOST")
 DATABASE_PORT = environ.get("DATABASE_PORT")
 DATABASE_NAME = environ.get("DATABASE_NAME")
@@ -42,7 +44,7 @@ AWS_LOCATION = environ.get("AWS_LOCATION")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [HOSTNAME]
 
 
 # Application definition
