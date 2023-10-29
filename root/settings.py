@@ -46,8 +46,11 @@ AWS_LOCATION = environ.get("AWS_LOCATION")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [HOSTNAME]
-CSRF_TRUSTED_ORIGINS = [APP_URL]
+if HOSTNAME:
+    ALLOWED_HOSTS = [HOSTNAME]
+
+if APP_URL:
+    CSRF_TRUSTED_ORIGINS = [APP_URL]
 
 
 

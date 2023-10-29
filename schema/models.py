@@ -15,6 +15,7 @@ def image_path(model: str, instance, filename: str) -> str:
 
 class Author(models.Model):
     name = models.CharField(null=True, blank=True, max_length=255)
+    email_address = models.CharField(null=True, blank=True, max_length=255)
     image = ImageField(null=True, blank=True, upload_to=partial(image_path, "author"))
 
     def __str__(self):
