@@ -27,7 +27,6 @@ SECRET_KEY = environ.get(
 )
 
 
-
 HOSTNAME = environ.get("HOSTNAME")
 APP_URL = environ.get("APP_URL")
 
@@ -41,13 +40,8 @@ AWS_ACCESS_KEY_ID = environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = environ.get("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_ENDPOINT_URL = environ.get("AWS_S3_ENDPOINT_URL")
-AWS_LOCATION = environ.get("AWS_LOCATION", 'static')
+AWS_LOCATION = environ.get("AWS_LOCATION", "static")
 
-print(AWS_ACCESS_KEY_ID)
-print(AWS_SECRET_ACCESS_KEY)
-print(AWS_STORAGE_BUCKET_NAME)
-print(AWS_S3_ENDPOINT_URL)
-print(AWS_LOCATION)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -56,7 +50,6 @@ if HOSTNAME:
 
 if APP_URL:
     CSRF_TRUSTED_ORIGINS = [APP_URL]
-
 
 
 # Application definition
@@ -69,7 +62,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "schema",
-    'rest_framework',
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -194,6 +187,8 @@ if (
             "OPTIONS": {},
         },
     }
+else:
+    STATIC_ROOT = "media"
 AWS_S3_OBJECT_PARAMETERS = {
     "CacheControl": "max-age=86400",
 }
@@ -212,8 +207,7 @@ STATIC_URL = (
 )
 
 
-
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
 }
