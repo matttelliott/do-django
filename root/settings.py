@@ -41,8 +41,13 @@ AWS_ACCESS_KEY_ID = environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = environ.get("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_ENDPOINT_URL = environ.get("AWS_S3_ENDPOINT_URL")
-AWS_LOCATION = environ.get("AWS_LOCATION")
+AWS_LOCATION = environ.get("AWS_LOCATION", 'static')
 
+print(AWS_ACCESS_KEY_ID)
+print(AWS_SECRET_ACCESS_KEY)
+print(AWS_STORAGE_BUCKET_NAME)
+print(AWS_S3_ENDPOINT_URL)
+print(AWS_LOCATION)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
