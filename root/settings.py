@@ -45,10 +45,8 @@ AWS_LOCATION = environ.get("AWS_LOCATION")
 DEBUG = True
 
 ALLOWED_HOSTS = [HOSTNAME]
-print('ALLOWED_HOSTS')
-print(ALLOWED_HOSTS)
-print(DATABASE_NAME)
-print(DATABASE_USER)
+CSRF_TRUSTED_ORIGINS = [HOSTNAME]
+
 
 
 # Application definition
